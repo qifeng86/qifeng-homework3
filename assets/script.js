@@ -10,20 +10,10 @@ var number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var letter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var uppercaseletter = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-
 var generateBtn = document.querySelector("#generate");
 
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
-
-var get = document.querySelector("#generate");
-
-get.addEventListener("click", function () {
-    password = generatePassword();
+generateBtn.addEventListener("click", function () {
+    var password = generatePassword();
     document.getElementById("password").placeholder = password;
 });
 
@@ -31,6 +21,7 @@ function generatePassword() {
     userinput = prompt("Please choose between 8 and 128 characters for your password");
     if (!userinput) {
         alert("No empty value");
+
     } else if (userinput < 8 || userinput > 128) {
         userinput = prompt("Choose between 8 and 128");
 
@@ -111,8 +102,8 @@ function UserInput(password) {
 
 }
 
-var copy = document.querySelector("#copy");
-copy.addEventListener("click", function () {
+var copy = document.querySelector("#password");
+    copy.addEventListener("click", function () {
     copyPassword();
 });
 

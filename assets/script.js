@@ -12,11 +12,13 @@ var uppercaseletter = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L
 
 var generateBtn = document.querySelector("#generate");
 
+// Define a function when generate button is clicked
 generateBtn.addEventListener("click", function () {
     var password = generatePassword();
     document.getElementById("password").placeholder = password;
 });
 
+// Prompt user to pick and choose random combinations
 function generatePassword() {
     userinput = prompt("Please choose between 8 and 128 characters for your password");
     if (!userinput) {
@@ -102,12 +104,14 @@ function UserInput(password) {
 
 }
 
+//Function to copy generated password to text box
+function copyPassword() {
+    document.getElementById("password").select();
+    document.execCommand("Copy");
+}
+
 var copy = document.querySelector("#password");
     copy.addEventListener("click", function () {
     copyPassword();
 });
 
-function copyPassword() {
-    document.getElementById("password").select();
-    document.execCommand("Copy");
-}

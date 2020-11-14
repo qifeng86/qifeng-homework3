@@ -25,7 +25,7 @@ function generatePassword() {
         alert("No empty value");
 
     } else if (userinput < 8 || userinput > 128) {
-        userinput = prompt("Choose between 8 and 128");
+        userinput = alert("Choose between 8 and 128, TRY AGAIN!");
 
     } else {
         picknumber = confirm("Do you want to include numbers?");
@@ -114,4 +114,3 @@ var copy = document.querySelector("#password");
     copy.addEventListener("click", function () {
     copyPassword();
 });
-
